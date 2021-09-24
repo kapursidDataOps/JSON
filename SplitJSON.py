@@ -9,9 +9,8 @@ for obj in data:
 def split_in_files(data, amount):
     step = len(data) // amount
     pos = 0
-    res=data[pos:pos+step]
-    print(type(res[0]))
     for i in range(amount - 1):
+        res=data[pos:pos+step]
         with open('output_file{}.json'.format(i+1), 'w') as file:
             json.dump(res[0],file)        
             pos += step
